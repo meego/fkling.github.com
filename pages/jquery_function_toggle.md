@@ -1,6 +1,6 @@
 ---
 layout: creation
-subtitle: jQuery Function Toggle
+title: jQuery Function Toggle
 ---
 
 

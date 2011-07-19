@@ -1,21 +1,58 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>felix-kling.de - {{ page.title }}</title>
-        <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Cabin+Sketch:bold' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
-        <link href="/assets/css/main.css" rel="stylesheet" type="text/css" />
-    </head>
-    <body class="start">
-    <div id="header">
-        <h1>{{ page.title }}</h1>
-    </div>
-        <div id="main">
-            <div id="content">
-                {{ content }}
-            </div>
-            
+<head>
+<title>{% if page.title %} {{ page.title }} - {%endif%}{% if page.heading %} {{ page.heading }} - {%endif%}Felix
+	Kling</title>
+<link href="/assets/css/main.css" rel="stylesheet" type="text/css" />
+<link href="/assets/css/sunburst.css" rel="stylesheet" type="text/css" />
+<script src="/assets/js/prettify.js"></script>
+<script>
+	window.onload = function() {
+		var a = false;
+		var codes = document.getElementsByTagName('code');
+		for ( var i = codes.length; i--;) {
+			codes[i].parentNode.classList.add('prettyprint');
+			a = true;
+		}
+		if (a) {
+			prettyPrint()
+		}
+	}
+</script>
+</head>
+<body>
+	<div id="main">
+		<header id="header">
+			<h1>{
+				{% if page.heading %} {{ page.heading }} - {%endif%} <a href="/"
+					title="return to home">Felix Kling</a>
+			}</h1>
+		</header>
+		<div id="sidebar">
+			<nav>
+				<h3>pages</h3>
+				{% assign menu = site.menu.main %}
+				{% include menu.html %}
+
+				<h3>creations</h3>
+				{% assign menu = site.menu.creations %}
+                {% include menu.html %}
+
+				<h3>on the web</h3>
+				{% assign menu = site.menu.web %}
+                {% include menu.html %}
+			</nav>
+		</div>
+		<div id="content">
+		{{ content }}
+		      <div id="footer">
+        &copy; 2011 by Felix Kling <br />
+        This web site uses the Open Source web analytics 
+        software <a href="http://piwik.org/">Piwik</a>. 
+        You can <a href="/piwik_opt_out.html"><strong>opt out</strong></a> from this.
         </div>
-    </body>
+		</div>
+
+	</div>
+</body>
 </html>

@@ -1,0 +1,30 @@
+---
+layout: default
+heading: rand() thoughts
+---
+<div id="post" class="{{ page.type | join}}">
+    <div class="header">
+        <h2>{{ page.title }}</h2>
+        <div class="meta">
+            <span class="date">{{ page.date | date_to_string }}</span>
+            <!--  
+            {% if page.categories %}
+            <span class="category">{{ page.categories | join: ', ' }}</span>
+            {% endif %}-->
+        </div>
+    </div>
+    {{ content }}
+    {% if page.src %}
+    <div class="footer">
+        <div class="source">
+        This post contains content from:
+        <ul>
+            {% for src in page.src %}
+            <li><a href="{{src}}">{{src}}</a></li>
+            {% endfor %}
+        </ul>
+        </div>
+    </div>
+    {% endif %}
+
+</div>
