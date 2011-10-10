@@ -283,6 +283,8 @@ blockquote {
 	background-color: #EEE;
 	border-radius: 10px;
 	font-size: 0.9em;
+    color: #555;
+    font-style:normal; 
 }
 
 #post blockquote h1,
