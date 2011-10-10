@@ -12,10 +12,10 @@ I have studied at the [TU Kaiserslautern (Germany)](http://www.uni-kl.de/5098.ht
  were able to build a "universal" machine that can basically do anything (later I learned that this is not
  true ;)).
  
-The topics I'm interesting vary greatly. In these times, new technologies and opportunities grow
+The topics I am interested in vary greatly. In these times, new technologies and opportunities grow
 so fast that it is hard to follow them all.
 
-However if had to name my areas of interest, it would probably come down to
+However if had to name some of my areas of interest, it would probably come down to
  
  - Web technologies
  - Algorithms
@@ -23,4 +23,14 @@ However if had to name my areas of interest, it would probably come down to
  - Computer Security
  
  
-I know I cannot know everything, but I try to learn a bit more every day.
+I know I cannot know everything, but I am trying to learn a bit more every day.
+
+---
+
+Some of my favorite quotes:
+
+> "I may not have gone where I intended to go, but I think I have ended up where I needed to be." (Douglas Adams - Hitchhiker's Guide to the Galaxy)
+
+> "Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away." (Antoine de Saint Exupery)
+
+> "If you're not making mistakes, you're not doing anything." (John Wooden)

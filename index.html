@@ -14,7 +14,7 @@ menu: [home]
 <tbody>
 {% for post in site.posts %}
 <tr>
-    <td>
+    <td class="date">
         <span class="date">{{ post.date | date_to_string }}</span>
     </td>
     <td class="title">
@@ -25,13 +25,10 @@ menu: [home]
     <a href="{{post.url}}">{{ post.title }}</a>
     {% endif %}
     </td>
-    <td>
-    {% capture width %}{{ post.type | size }}{% endcapture %}
-    <div class="post-types" style="width:{{ 26 | times: width }}px">
+    <td class="post-types">
     {% for type in post.type %}
         <span class="post-type {{ type }}" title="{{ type }}">{{ type }}</span>
     {%endfor%}
-    </div>
     </td>
 </tr>
 {%endfor%}
