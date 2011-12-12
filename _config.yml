@@ -22,3 +22,6 @@ menu:
     
     - name: jQuery Function Toggle
       url: /pages/jquery_function_toggle.html
+
+    - name: Game of Life
+      url: /Game-of-Life
