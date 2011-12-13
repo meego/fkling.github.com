@@ -6,22 +6,6 @@ exclude:
 
 menu: 
   main:
-    - name: home
-      url: "/"
+    - name: projects
+    - name: log
     - name: about
-
-  web:
-    - name: GitHub
-      url: https://github.com/fkling
-  
-    - name: Stackoverflow
-      url: http://stackoverflow.com/users/218196/felix-kling
-
-  creations:
-    - name: FloatNotes
-    
-    - name: jQuery Function Toggle
-      url: /pages/jquery_function_toggle.html
-
-    - name: Game of Life
-      url: /Game-of-Life

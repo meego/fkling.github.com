@@ -27,25 +27,9 @@
 				{% if page.heading %} {{ page.heading }} - {%endif%} <a href="/"
 					title="return to home">Felix Kling</a>
 			}</h1>
-		</header>
-		<div id="sidebar">
-			<nav>
-				<h3>pages</h3>
 				{% assign menu = site.menu.main %}
 				{% include menu.html %}
-
-				<h3>creations</h3>
-				{% assign menu = site.menu.creations %}
-                {% include menu.html %}
-
-				<h3>on the web</h3>
-				{% assign menu = site.menu.web %}
-                {% include menu.html %}
-                <ul style="margin-top:-10px;">
-                    <li><a rel="author" href="https://plus.google.com/105256337446428722623">Google +</a></li>
-                </ul>
-			</nav>
-		</div>
+		</header>
 		<div id="content">
 		{{ content }}
 		      <div id="footer">

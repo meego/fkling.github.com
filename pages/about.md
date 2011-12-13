@@ -1,14 +1,13 @@
 ---
 layout: default
-heading: about
 menu: [about]
 ---
 
-I'm a Master student, currently studying at the [University of Trento (Italy)](http://www.unitn.it/en). 
-I have studied at the [TU Kaiserslautern (Germany)](http://www.uni-kl.de/5098.html?L=1)
- and the [RWTH Aachen (Germany)](http://www.rwth-aachen.de/go/id/bdz/) before.
- 
- I started Computer Science because I wanted to know how computers work. I found it fascinating that humans
+I studied computer science at the [RWTH Aachen (Germany)](http://www.rwth-aachen.de/go/id/bdz/), 
+[University of Trento (Italy)](http://www.unitn.it/en) and the [TU Kaiserslautern (Germany)](http://www.uni-kl.de/5098.html?L=1).
+Now I am a doctoral fellow at the [National Research Centre for Geomputation](http://ncg.nuim.ie/) in Ireland.
+
+I started to be interested computer science because I wanted to know how computers work. I found it fascinating that humans
  were able to build a "universal" machine that can basically do anything (later I learned that this is not
  true ;)).
  
@@ -21,7 +20,10 @@ However if had to name some of my areas of interest, it would probably come down
  - Algorithms
  - Machine Learning
  - Computer Security
- 
+
+thought that does not mean that I am very familiar with all of these topics.
+
+I am an avid programmer and active user on [Stackoverflow](http://stackoverflow.com/).
  
 I know I cannot know everything, but I am trying to learn a bit more every day.
 

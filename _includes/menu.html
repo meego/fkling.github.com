@@ -1,7 +1,7 @@
-<ul>
+<ul class="menu">
     {% for item in menu %}
-        <li {%if page.menu contains item.name %} class="active" {% endif %}>
-            <a href="{%if item.url %}{{item.url}}{%else%}/pages/{{item.name | downcase}}.html{%endif%}">{{ item.name }}</a>
+        <li class="entry{%if page.menu contains item.name %} active{% endif %}">
+        <a {%if item.author%} rel="author" {%endif%} href="{%if item.url %}{{item.url}}{%else%}/pages/{{item.name | downcase}}.html{%endif%}">{{ item.name }}</a>
         </li>
     {% endfor %}
 </ul>

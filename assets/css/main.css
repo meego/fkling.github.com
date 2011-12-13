@@ -1,18 +1,17 @@
 html, body {
-	font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
-	margin: 0;
-	padding: 0;
-	width: 100%;
+    font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+    margin: 0;
+    padding: 0;
+    width: 100%;
     height: 100%;
 }
 
 
 h1 {
-	/*margin: auto;*/
-	font-size: 2em;
-	margin-top: 0;
-	margin-bottom: 0;
-    border-bottom: 5px solid;
+    /*margin: auto;*/
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 h1 a {
@@ -21,19 +20,19 @@ h1 a {
 }
 
 h1 a:hover {
-    color: red;	
+    text-shadow: 0px 0px 10px #333;
 }
 
 h2 {
-	font-size: 1.5em;
-	border-bottom: 3px solid;
-	margin-top: 0.1em;
+    font-size: 1.5em;
+    border-bottom: 3px solid;
+    margin-top: 0.1em;
 }
 
 h1,h2, h3 {
-	letter-spacing: 0.2em;
-	color: #555;
-	border-color: #555;
+    letter-spacing: 0.2em;
+    color: #555;
+    border-color: #555;
 }
 
 blockquote {
@@ -47,31 +46,132 @@ blockquote {
     font-size: 0.9em;
     background-color: #888;
 }
-#header {
-	padding-top: 50px;
-	padding-bottom: 20px;
+
+.clearfix {
+    clear: both;
 }
 
+#header {
+    position: relative;
+    padding-top: 50px;
+    margin-bottom: 20px;
+    border-bottom: 5px solid;
+    border-color: #555; 
+}
+
+#header h1 {
+    display: inline-block;
+}
+
+#header .menu {
+    position: absolute;
+    right: 0;
+    bottom: 0;    
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+#header .menu .entry {
+    margin: 0 10px 0 10px;
+    padding: 5px;
+    display: inline-block;
+}
+
+#header .menu .entry a {
+    color: #666;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    display: inline-block;
+    width: 100%;
+}
+
+#header .menu .entry:hover, #header .menu .entry.active {
+    background-color: #555;
+}
+
+#header .menu .entry:hover a, #header .menu .entry.active a {
+    color: white;
+}
+
+
+#introduction {
+    margin-bottom: 20px;
+}
+
+#introduction .picture {
+    float: left;
+    width: 180px;
+}
+
+#introduction .picture img {
+    border: 2px solid #555;
+    box-shadow: 2px 2px 5px #888;
+}
+
+
+#introduction .description {
+    margin-left: 200px;
+}
+
+
+#main {
+    margin: auto;
+    width: 750px;
+}
+
+#content {
+    font-size: 0.9em;
+    padding-right: 30px;
+    padding-bottom: 30px;
+}
+
+#content ul {
+    list-style: square;
+}
+
+#content a {
+    color: #2B36B6;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+#content a[href^=http] {
+    background: url(/assets/icons/external_link_icon.png) center right no-repeat;
+    padding-right: 18px;
+    font-size: 0.9em;
+}
+
+#content a:hover {
+    color: white;
+    background-color: #2B36B6;
+    text-decoration: none;
+}
+
+#content p {
+    line-height: 1.5em;
+}
 
 #post_list {
     list-style: none;
     margin-left: 0;
     padding-left: 0;	
     border-collapse: collapse;
-   border-spacing: 0; 
+    border-spacing: 0; 
 }
 
 #post_list td.date {
-	color: white;
+    color: white;
     background-color: #888;
 }
 
 #post_list span.date {
-	padding: 10px;
-	font-style: italic;
-	letter-spacing: 0.15em;
-	white-space: nowrap;
-	font-size: 0.9em;
+    padding: 10px;
+    font-style: italic;
+    letter-spacing: 0.15em;
+    white-space: nowrap;
+    font-size: 0.9em;
 }
 
 #post_list .title {
@@ -101,11 +201,11 @@ blockquote {
 }
 
 #post_list tr td {
-	margin: 0;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	border-collapse: collapse;
-	border-spacing: 0;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-collapse: collapse;
+    border-spacing: 0;
     border-bottom: 1px solid grey;
 }
 
@@ -119,118 +219,40 @@ blockquote {
 }
 
 .post-types {
-	white-space: nowrap;
+    white-space: nowrap;
 }
 
 .post-type {
-	float: right;
-	width: 16px;
-	height: 16px;
-	color: transparent;
-	padding-left: 5px;
-	padding-right: 5px;
-	background-repeat:  no-repeat !important;
+    float: right;
+    width: 16px;
+    height: 16px;
+    color: transparent;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-repeat:  no-repeat !important;
     display: inline-block;
 }
 
 .post-type.video {
-    background: url(/assets/images/video_16.png);
+    background: url(/assets/icons/video_16.png);
 }
 .post-type.text {
-    background: url(/assets/images/notes_16.png);
+    background: url(/assets/icons/notes_16.png);
 }
 .post-type.image {
-    background: url(/assets/images/image_16.png);
+    background: url(/assets/icons/image_16.png);
 }
 
 .post-type.link {
-    background: url(/assets/images/link_16.png);
+    background: url(/assets/icons/link_16.png);
 }
 
 .post-type.script {
-    background: url(/assets/images/script_16.png);
-}
-
-#main {
-	margin: auto;
-	width: 800px;
-}
-
-#content {
-    font-size: 0.9em;
-    margin-right: 200px;
-    padding-right: 30px;
-    padding-bottom: 30px;
-}
-
-#content ul {
-	list-style: square;
-	}
-
-#sidebar {
- float:right;
- width: 200px;
-}
-#sidebar h3 {
-	text-transform: uppercase;
-	font-size: 0.8em;
-	border-bottom: 3px solid;
-	}
-
-#sidebar ul {
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
-    margin-bottom: 20px;
-}
-
-#sidebar ul li {
-    font-size: 0.8em;
-    margin-bottom: 10px;
-    padding: 5px;
-}
-
-#sidebar ul li a {
-    color: #666;
-    text-decoration: none;
-    letter-spacing: 0.1em;
-    display: inline-block;
-    width: 100%;
-}
-
-#sidebar ul li:hover, #sidebar ul li.active {
-    background-color: #999;
-}
-
-#sidebar ul li:hover a, #sidebar ul li.active  a {
-    color: white;
-}
-
-
-#content a {
-    color: #2B36B6;
-    padding-left: 2px;
-    padding-right: 2px;
-}
-
-#content a[href^=http] {
-    background: url(/assets/images/external_link_icon.png) center right no-repeat;
-    padding-right: 18px;
-    font-size: 0.9em;
-}
-
-#content a:hover {
-	color: white;
-	background-color: #2B36B6;
-	text-decoration: none;
-}
-
-#content p {
-	line-height: 1.5em;
+    background: url(/assets/icons/script_16.png);
 }
 
 #post .footer {
-	padding-top: 10px;
+    padding-top: 10px;
     border-top: 2px solid #AAA6A6;
     color: #AAA6A6;
     font-size: 0.8em;
@@ -254,35 +276,35 @@ blockquote {
 }
 
 #post .header .date {
-    background: url(/assets/images/clock_mini_16.png) left center no-repeat;
+    background: url(/assets/icons/clock_mini_16.png) left center no-repeat;
     padding-left: 20px;
     display: inline-block;
 }
 
 #post .header .category {
-    background: url(/assets/images/label_16.png) left center no-repeat;
-     padding-left: 20px;
-     height: 18px;
-     display: inline-block;
-     float: right;
+    background: url(/assets/icons/label_16.png) left center no-repeat;
+    padding-left: 20px;
+    height: 18px;
+    display: inline-block;
+    float: right;
 }
 
 /* some special type treatments */
 #post.video iframe {
-	border: 5px solid black;
-	border-radius: 8px;
+    border: 5px solid black;
+    border-radius: 8px;
 }
 
 #post h3 {
-	margin-top: 2em;
+    margin-top: 2em;
 }
 
 #post blockquote {
-	margin:5px;
-	padding:5px;
-	background-color: #EEE;
-	border-radius: 10px;
-	font-size: 0.9em;
+    margin:5px;
+    padding:5px;
+    background-color: #EEE;
+    border-radius: 10px;
+    font-size: 0.9em;
     color: #555;
     font-style:normal; 
 }
@@ -296,14 +318,53 @@ blockquote {
 }
 
 #footer {
-	text-align: center;
-	font-size: 0.8em;
-	color: #888;
-	margin-top: 30px;
-	padding-top: 5px;
-	border-top: 1px solid #AAA;
+    text-align: center;
+    font-size: 0.8em;
+    color: #888;
+    margin-top: 30px;
+    padding-top: 5px;
+    border-top: 1px solid #AAA;
 }
 
 #footer a {
     color: #666;
 }
+
+#projects .project:not(:last-child) {
+    border-bottom: 1px solid #AAA;
+}
+
+#projects .project {
+    margin-top: 30px;
+}
+
+#projects .picture {
+    float: left;
+    margin-right: 10px;
+}
+
+#projects img {
+    border: 2px solid #555;
+    box-shadow: 2px 2px 5px #888;
+}
+
+
+#projects .description {
+    margin-left: 200px;
+}
+
+
+#projects dt, #introduction dt {
+    font-weight: bold;
+}
+
+#projects dt:not(:first-child) {
+    margin-top: 5px;
+}
+
+#projects dd, #introduction dd  {
+    margin-left: 20px;
+    padding: 2px 0px 5px 0px;
+}
+
+

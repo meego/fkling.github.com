@@ -1,0 +1,31 @@
+{% if projects %}
+<div id="projects">
+{% for project in projects %}
+<div class="project">
+    <div class="picture">
+        <img width="180" src="{{ project.image }}" />
+    </div>
+    <div class="description">
+    <h3>{{ project.title }}</h3>
+    {{ project.content }}
+    {% if project.source or project.link or project.categories %}
+    <dl class="metadata">
+        {% if project.link %}
+            <dt>Website:</dt>
+            <dd><a href="{{ project.link }}">{{ project.link }}</a></dd>
+            {% endif %}
+            {% if project.source %}
+            <dt>Source:</dt>
+            <dd><a href="{{ project.source }}">{{ project.source }}</a></dd>
+            {% endif %}
+            {% if project.categories %}
+            <dt>Technology:</dt>
+            <dd>{{ project.categories | join:', ' }}</dd>
+            {% endif %}
+    </dl>
+{% endif %}
+</div>
+</div>
+{% endfor %}
+</div>
+{% endif %}
