@@ -13,4 +13,5 @@ categories:
 
 FloatNotes is a simple Firefox plugin with which you can create sticky notes on every web page. 
 Notes are stored in your browser, but can be synchronized between browsers using Firefox Sync. No registration for any service is required.
+
 For user reviews, please have a look at [addons.mozilla.org](https://addons.mozilla.org/en-US/firefox/addon/floatnotes/).
