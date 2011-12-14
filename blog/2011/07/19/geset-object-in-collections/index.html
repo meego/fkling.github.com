@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Getset objects in collections - Felix
+	Kling</title>
+<link href="/assets/css/main.css" rel="stylesheet" type="text/css" />
+<link href="/assets/css/sunburst.css" rel="stylesheet" type="text/css" />
+<script src="/assets/js/prettify.js"></script>
+<script>
+	window.onload = function() {
+		var a = false;
+		var codes = document.getElementsByTagName('code');
+		for ( var i = codes.length; i--;) {
+			codes[i].parentNode.classList.add('prettyprint');
+			a = true;
+		}
+		if (a) {
+			prettyPrint()
+		}
+	}
+</script>
+</head>
+<body>
+	<div id="main">
+		<header id="header">
+			<h1>{
+				 <a href="/"
+					title="return to home">Felix Kling</a>
+			}</h1>
+				
+				<ul class="menu">
+    
+        <li class="entry">
+        <a  href="/pages/projects.html">projects</a>
+        </li>
+    
+        <li class="entry active">
+        <a  href="/pages/log.html">log</a>
+        </li>
+    
+        <li class="entry">
+        <a  href="/pages/about.html">about</a>
+        </li>
+    
+</ul>
+
+		</header>
+		<div id="content">
+		<div id="post" class="text script">
+    <div class="header">
+        <h2>Getset objects in collections</h2>
+        <div class="meta">
+            <span class="date">19 Jul 2011</span>
+            <!--  
+            
+            <span class="category"></span>
+            -->
+        </div>
+    </div>
+    <p>Quite often you find yourself in a situation where you have to an object to a collection
+or change a certain property. The &ldquo;normal&rdquo; is to test via an <code>if</code> statement whether the
+object exists or not:</p>
+
+<pre><code>var obj = collection[someId];
+if(!obj) {
+    obj = {};
+    collection[someId] = obj;
+}
+// do something with object
+</code></pre>
+
+<p>This works, is readable, but can be annoying if you have to do this often.</p>
+
+<p>The shorthand syntax for setting a default value for, lets say, a parameter is probably
+well know:</p>
+
+<pre><code>param = param || 'default';
+</code></pre>
+
+<p>Can we use this somehow in this situation too? Yes we can. &ldquo;Luckily&rdquo;, the assignment operation
+<em>returns</em> the value that was assigned to a variable:</p>
+
+<blockquote>
+  <h2 id="simple-assignment---httpecma262-5comels5htmlhtmsection11131"><a href="http://ecma262-5.com/ELS5_HTML.htm#Section_11.13.1">11.13.1   Simple Assignment ( = )</a></h2>
+
+  <p>The production <em>AssignmentExpression : LeftHandSideExpression = AssignmentExpression</em> is evaluated as follows:</p>
+
+  <ol>
+    <li>Let <em>lref</em> be the result of evaluating <em>LeftHandSideExpression</em>.</li>
+    <li>Let <em>rref</em> be the result of evaluating <em>AssignmentExpression</em>.</li>
+    <li>Let <em>rval</em> be GetValue(<em>rref</em>).</li>
+    <li>
+      <p>Throw a <strong>SyntaxError</strong> exception if the following conditions are all true:</p>
+
+      <ul>
+        <li>Type(<em>lref</em>) is Reference is <strong>true</strong></li>
+        <li>IsStrictReference(<em>lref</em>) is <strong>true</strong></li>
+        <li>Type(GetBase(<em>lref</em>)) is Enviroment Record</li>
+        <li>GetReferencedName(<em>lref</em>) is either &ldquo;<strong><code>eval</code></strong>&rdquo; or &ldquo;<strong><code>arguments</code></strong>&rdquo;</li>
+      </ul>
+    </li>
+    <li>Call PutValue(<em>lref</em>, <em>rval</em>).
+6.Return <em>rval</em>.</li>
+  </ol>
+</blockquote>
+
+<p><em>(Reference: <a href="http://ecma262-5.com/ELS5_HTML.htm">http://ecma262-5.com/ELS5_HTML.htm</a>)</em></p>
+
+<p>That means we can use this slightly less readble but much shorter version:</p>
+
+<pre><code>var obj = collection[someId] || (collection[someID] = {});
+</code></pre>
+
+    
+
+</div>
+
+		      <div id="footer">
+        &copy; 2011 by Felix Kling <br />
+        This web site uses the Open Source web analytics 
+        software <a href="http://piwik.org/">Piwik</a>. 
+        You can <a href="/piwik_opt_out.html"><strong>opt out</strong></a> from this.
+        </div>
+		</div>
+
+	</div>
+	<!-- Piwik --> 
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.reblaus-kleinkunst.de/" : "http://piwik.reblaus-kleinkunst.de/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 2);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://piwik.reblaus-kleinkunst.de/piwik.php?idsite=2" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+</body>
+</html>

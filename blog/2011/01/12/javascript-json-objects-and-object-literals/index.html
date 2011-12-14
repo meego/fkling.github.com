@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> JavaScript, JSON objects and object literals - Felix
+	Kling</title>
+<link href="/assets/css/main.css" rel="stylesheet" type="text/css" />
+<link href="/assets/css/sunburst.css" rel="stylesheet" type="text/css" />
+<script src="/assets/js/prettify.js"></script>
+<script>
+	window.onload = function() {
+		var a = false;
+		var codes = document.getElementsByTagName('code');
+		for ( var i = codes.length; i--;) {
+			codes[i].parentNode.classList.add('prettyprint');
+			a = true;
+		}
+		if (a) {
+			prettyPrint()
+		}
+	}
+</script>
+</head>
+<body>
+	<div id="main">
+		<header id="header">
+			<h1>{
+				 <a href="/"
+					title="return to home">Felix Kling</a>
+			}</h1>
+				
+				<ul class="menu">
+    
+        <li class="entry">
+        <a  href="/pages/projects.html">projects</a>
+        </li>
+    
+        <li class="entry active">
+        <a  href="/pages/log.html">log</a>
+        </li>
+    
+        <li class="entry">
+        <a  href="/pages/about.html">about</a>
+        </li>
+    
+</ul>
+
+		</header>
+		<div id="content">
+		<div id="post" class="text">
+    <div class="header">
+        <h2>JavaScript, JSON objects and object literals</h2>
+        <div class="meta">
+            <span class="date">12 Jan 2011</span>
+            <!--  
+            
+            <span class="category">javascript, json</span>
+            -->
+        </div>
+    </div>
+    <p>This is my crusade against the inconsiderate usage of the term <em>JSON object</em> in the context of JavaScript.</p>
+
+<h3 id="json-and-json-objects">JSON and JSON objects</h3>
+
+<p>JSON objects are <a href="http://json.org/">defined</a> as follows:</p>
+
+<p><img src="http://json.org/object.gif" alt="JSON object" width="100%" /></p>
+
+<p>Where <code>value</code> can be:</p>
+
+<ul>
+  <li>a string (<code>"string"</code>)</li>
+  <li>a number (<code>42</code>)</li>
+  <li>another object (<code>{"key": ...}</code>)</li>
+  <li>an array (<code>[42, "string", {...}, ...]</code>)</li>
+  <li><code>true</code></li>
+  <li><code>false</code></li>
+  <li><code>null</code></li>
+</ul>
+
+<p>So this is a valid JSON string with a JSON object:</p>
+
+<pre><code>{"foo": "bar", "baz": 0}
+</code></pre>
+
+<h3 id="object-literals-in-javascript">Object literals in JavaScript</h3>
+
+<p>Some people think, the <a href="https://developer.mozilla.org/en/Core_JavaScript_1.5_Guide/Core_Language_Features#Object_Literals">object literals</a> 
+in JavaScript and JSON objects are the same and use the latter to describe the former. 
+But that is wrong. The syntax for JSON objects is just a <em>subset</em> of the possible syntax for JavaScript 
+objects. The object literal notation was just the model for JSON.</p>
+
+<p>This is <strong>not</strong> a JSON object:</p>
+
+<pre><code>var foo =  {foo: "bar", baz: 0};
+</code></pre>
+
+<p>It is an object literal. It would be only valid to talk about a JSON object in this case:</p>
+
+<pre><code> var foo = '{"foo": "bar", "baz": 0}';
+</code></pre>
+
+<p>because now here we have a <strong>string</strong> that contains JSON and a JSON object.</p>
+
+<h3 id="the-json-object-in-javascript">The JSON object in JavaScript</h3>
+
+<p>Using the term JSON object for object literal notation seems to be even more wrong considering that 
+<em>there actually exists a JSON object in JavaScript</em>. At least in the newer browsers. It is an object, 
+available via the global variable <a href="https://developer.mozilla.org/en/json"><code>JSON</code></a> and provides the methods</p>
+
+<ul>
+  <li><code>JSON.parse</code> to decode JSON data into JavaScript objects</li>
+  <li><code>JSON.stringify</code> to encode JavaScript values (primitive values, arrays and objects)
+ into JSON data (if possible)</li>
+</ul>
+
+<h3 id="bottom-line">Bottom line</h3>
+
+<p>Don&rsquo;t use the term  <em>JSON object</em> to describe JavaScript objects defined with <em>object literal notation</em>. 
+It is misleading and confusing.</p>
+
+<hr />
+
+<h3 id="further-information">Further information:</h3>
+
+<ul>
+  <li><a href="http://benalman.com/news/2010/03/theres-no-such-thing-as-a-json/">There&rsquo;s no such thing as a &ldquo;JSON Object&rdquo;</a></li>
+</ul>
+
+    
+    <div class="footer">
+        <div class="source">
+        This post contains content from:
+        <ul>
+            
+            <li><a href="http://json.org/">http://json.org/</a></li>
+            
+        </ul>
+        </div>
+    </div>
+    
+
+</div>
+
+		      <div id="footer">
+        &copy; 2011 by Felix Kling <br />
+        This web site uses the Open Source web analytics 
+        software <a href="http://piwik.org/">Piwik</a>. 
+        You can <a href="/piwik_opt_out.html"><strong>opt out</strong></a> from this.
+        </div>
+		</div>
+
+	</div>
+	<!-- Piwik --> 
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.reblaus-kleinkunst.de/" : "http://piwik.reblaus-kleinkunst.de/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 2);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://piwik.reblaus-kleinkunst.de/piwik.php?idsite=2" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+</body>
+</html>
