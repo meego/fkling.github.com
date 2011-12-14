@@ -11,6 +11,6 @@ categories:
 
 A simple implementation of [Conway's Game of Life](http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) in JavaScript, featuring an (theoretical) infinite grid and local game storage.
 
-It is in an early stage, please have a look at the [README file](https://github.com/fkling/Game-of-Life/blob/master/README.md).
+It is in an early stage, please have a look at the [README file](https://github.com/fkling/Game-of-Life/blob/master/README.md) for a list of planned features.
 
 You need the latest version of Chrome, Safari or Firefox to run it.
