@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> How to detect when HTML5's history.pushState() is called? - Felix
+	Kling</title>
+<link href="/assets/css/main.css" rel="stylesheet" type="text/css" />
+<link href="/assets/css/sunburst.css" rel="stylesheet" type="text/css" />
+<script src="/assets/js/prettify.js"></script>
+<script>
+	window.onload = function() {
+		var a = false;
+		var codes = document.getElementsByTagName('code');
+		for ( var i = codes.length; i--;) {
+			codes[i].parentNode.classList.add('prettyprint');
+			a = true;
+		}
+		if (a) {
+			prettyPrint()
+		}
+	}
+</script>
+</head>
+<body>
+	<div id="main">
+		<header id="header">
+			<h1>{
+				 <a href="/"
+					title="return to home">Felix Kling</a>
+			}</h1>
+				
+				<ul class="menu">
+    
+        <li class="entry">
+        <a  href="/pages/projects.html">projects</a>
+        </li>
+    
+        <li class="entry active">
+        <a  href="/pages/log.html">log</a>
+        </li>
+    
+        <li class="entry">
+        <a  href="/pages/about.html">about</a>
+        </li>
+    
+</ul>
+
+		</header>
+		<div id="content">
+		<div id="post" class="text script">
+    <div class="header">
+        <h2>How to detect when HTML5's history.pushState() is called?</h2>
+        <div class="meta">
+            <span class="date">06 Jan 2011</span>
+            <!--  
+            
+            <span class="category">javascript, html5, history</span>
+            -->
+        </div>
+    </div>
+    <p>That was the question I had and <a href='http://stackoverflow.com/users/378024/galambalazs'>galambalazs</a> helped me to solve this question on <a href='http://stackoverflow.com/questions/4570093/how-to-get-notified-about-changes-of-the-history-via-history-pushstate'>stackoverflow.com</a>.</p>
+<hr />
+<p><strong>Problem description and background:</strong></p>
+
+<p>The latest version of my Firefox add-on (<a href='http://www.floatnotes.org'>FloatNotes</a>), also listens to the event <code>hashchange</code>, which is raised when the <a href='http://en.wikipedia.org/wiki/Fragment_identifier'>fragment-identifier</a> of the <a href='http://en.wikipedia.org/wiki/Url'>URL</a> is changed. As you may know, this technique is used in Ajax-enabled websites (like Google Mail) to make URLs be part of the browsing history without reloading the page. So the idea is that if the hash has changed, the user actually visits another page.</p>
+
+<p>Now, with HTML5, the <a href='http://www.w3.org/TR/html5/history.html#the-history-interface'><code>window.history</code></a> object gets new methods which take the previous mentioned idea further: <code>pushState</code> and <code>replaceState</code>. As the name suggests, <code>pushState</code> adds a new URL to existing history stack and (if the protocol and host stay the same) <strong>does not trigger a reload of the page</strong>. Most browsers will display the new URL in the address bar too so it really looks like you clicked a normal link, but the content is loaded via Ajax. You can test this using Firefox 4 or Chrome 8 and Facebook.</p>
+
+<p>The problem is that calling <code>pushState</code> does generate any event (like changing the hash did) so loading of new content cannot be detected anymore.</p>
+<hr />
+<p><strong>The solution</strong></p>
+
+<p>I first tried to replace the whole history object with a custom object, but that did not work (probably <code>window.history</code> is readonly). Then <a href='http://stackoverflow.com/users/378024/galambalazs'>galambalazs</a> proposed to just replace the <code>pushState</code> method. Here is his code:</p>
+
+<pre><code>(function(history){
+    var pushState = history.pushState;
+    history.pushState = function(state) {
+        if (typeof history.onpushstate == &quot;function&quot;) {
+            history.onpushstate({state: state});
+        }
+        // ... whatever else you want to do
+        // maybe call onhashchange e.handler
+        return pushState.apply(history, arguments);
+    }
+})(window.history);</code></pre>
+
+<p>So whenever the <code>pushState</code> method is called, you can trigger your own event handler.</p>
+
+<p>It is a hack, but until an event is raised by default, this seems to be the only way to get notified when <code>history.pushState()</code> is called.</p>
+    
+
+</div>
+
+		      <div id="footer">
+        &copy; 2011 by Felix Kling <br />
+        This web site uses the Open Source web analytics 
+        software <a href="http://piwik.org/">Piwik</a>. 
+        You can <a href="/piwik_opt_out.html"><strong>opt out</strong></a> from this.
+        </div>
+		</div>
+
+	</div>
+	<!-- Piwik --> 
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.reblaus-kleinkunst.de/" : "http://piwik.reblaus-kleinkunst.de/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 2);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://piwik.reblaus-kleinkunst.de/piwik.php?idsite=2" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Jquery Issue In Firefox Extensions - Felix
+	Kling</title>
+<link href="/assets/css/main.css" rel="stylesheet" type="text/css" />
+<link href="/assets/css/sunburst.css" rel="stylesheet" type="text/css" />
+<script src="/assets/js/prettify.js"></script>
+<script>
+	window.onload = function() {
+		var a = false;
+		var codes = document.getElementsByTagName('code');
+		for ( var i = codes.length; i--;) {
+			codes[i].parentNode.classList.add('prettyprint');
+			a = true;
+		}
+		if (a) {
+			prettyPrint()
+		}
+	}
+</script>
+</head>
+<body>
+	<div id="main">
+		<header id="header">
+			<h1>{
+				 <a href="/"
+					title="return to home">Felix Kling</a>
+			}</h1>
+				
+				<ul class="menu">
+    
+        <li class="entry">
+        <a  href="/pages/projects.html">projects</a>
+        </li>
+    
+        <li class="entry active">
+        <a  href="/pages/log.html">log</a>
+        </li>
+    
+        <li class="entry">
+        <a  href="/pages/about.html">about</a>
+        </li>
+    
+</ul>
+
+		</header>
+		<div id="content">
+		<div id="post" class="link">
+    <div class="header">
+        <h2>Jquery Issue In Firefox Extensions</h2>
+        <div class="meta">
+            <span class="date">25 Jun 2010</span>
+            <!--  
+            
+            <span class="category"></span>
+            -->
+        </div>
+    </div>
+    <p><a href='https://gist.github.com/112562/cc75fd1412d26bc2f0a341c3066b26a881108ab6#file_readme'>A jQuery issue in Firefox extensions</a></p>
+    
+
+</div>
+
+		      <div id="footer">
+        &copy; 2011 by Felix Kling <br />
+        This web site uses the Open Source web analytics 
+        software <a href="http://piwik.org/">Piwik</a>. 
+        You can <a href="/piwik_opt_out.html"><strong>opt out</strong></a> from this.
+        </div>
+		</div>
+
+	</div>
+	<!-- Piwik --> 
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.reblaus-kleinkunst.de/" : "http://piwik.reblaus-kleinkunst.de/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 2);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://piwik.reblaus-kleinkunst.de/piwik.php?idsite=2" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+</body>
+</html>
