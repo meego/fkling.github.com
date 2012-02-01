@@ -49,3 +49,6 @@ Add the tests to `/usr/local/share/couchdb/www/script/couch_tests.js`
     loadTest("spatial_compaction.js");
     loadTest("spatial_design_docs.js");
     loadTest("spatial_bugfixes.js");
+
+
+**Follow the remaining instructions in the official README file.**
