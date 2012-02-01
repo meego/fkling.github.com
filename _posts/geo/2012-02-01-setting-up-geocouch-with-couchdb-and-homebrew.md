@@ -40,4 +40,12 @@ To make sure your installation is working also copy the Futon tests over (from `
 
     cp share/www/script/test/* /usr/local/share/couchdb/www/script/test/
 
-Add the tests as decribed in the instructions.
+Add the tests to `/usr/local/share/couchdb/www/script/couch_tests.js`
+
+    loadTest("spatial.js");
+    loadTest("list_spatial.js");
+    loadTest("etags_spatial.js");
+    loadTest("multiple_spatial_rows.js");
+    loadTest("spatial_compaction.js");
+    loadTest("spatial_design_docs.js");
+    loadTest("spatial_bugfixes.js");
