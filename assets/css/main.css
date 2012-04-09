@@ -74,38 +74,10 @@ blockquote {
 }
 
 #header .menu .entry {
-    /*margin: 0 10px 0 10px;*/
+    margin: 0 10px 0 10px;
     padding: 5px;
     display: inline-block;
 }
-
-#header .menu .entry:first-child a:before {
-    content: '/* ';
-}
-
-#header .menu .entry:last-child a:after {
-    content: ' */';
-}
-
-#header .menu .entry.active a:after {
-    content: ' /* ';
-}
-
-#header .menu .entry.active a:before {
-    content: ' */ ';
-}
-
-
-
-#header .menu .entry.active:first-child a:before {
-    content: '';
-}
-
-#header .menu .entry.active:last-child a:after {
-    content: '';
-}
-
-
 
 #header .menu .entry a {
     color: #666;
@@ -116,11 +88,11 @@ blockquote {
 }
 
 #header .menu .entry:hover, #header .menu .entry.active {
-    /*background-color: #555;*/
+    background-color: #555;
 }
 
 #header .menu .entry:hover a, #header .menu .entry.active a {
-    /*color: white;*/
+    color: white;
 }
 
 
