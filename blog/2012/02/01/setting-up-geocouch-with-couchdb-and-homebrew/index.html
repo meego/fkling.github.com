@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Setting up GeoCouch with CouchDB and Homebrew - Felix
+	Kling</title>
+<link href="/assets/css/main.css" rel="stylesheet" type="text/css" />
+<link href="/assets/css/sunburst.css" rel="stylesheet" type="text/css" />
+<script src="/assets/js/prettify.js"></script>
+<script>
+	window.onload = function() {
+		var a = false;
+		var codes = document.getElementsByTagName('code');
+		for ( var i = codes.length; i--;) {
+			codes[i].parentNode.classList.add('prettyprint');
+			a = true;
+		}
+		if (a) {
+			prettyPrint()
+		}
+	}
+</script>
+</head>
+<body>
+	<div id="main">
+		<header id="header">
+			<h1>{
+				 <a href="/"
+					title="return to home">Felix Kling</a>
+			}</h1>
+				
+				<ul class="menu">
+    
+        <li class="entry">
+        <a  href="/pages/projects.html">projects</a>
+        </li>
+    
+        <li class="entry active">
+        <a  href="/pages/log.html">log</a>
+        </li>
+    
+        <li class="entry">
+        <a  href="/pages/about.html">about</a>
+        </li>
+    
+</ul>
+
+		</header>
+		<div id="content">
+		<div id="post" class="text">
+    <div class="header">
+        <h2>Setting up GeoCouch with CouchDB and Homebrew</h2>
+        <div class="meta">
+            <span class="date">01 Feb 2012</span>
+            <!--  
+            
+            <span class="category">mac os x, gis, couchdb</span>
+            -->
+        </div>
+    </div>
+    <p>Installing <a href="http://couchdb.apache.org/">CouchDB</a> with <a href="https://github.com/mxcl/homebrew">Homebrew</a> is pretty straightforward:</p>
+
+<pre><code>brew install couchdb
+</code></pre>
+
+<p>The instructions for installing GeoCouch are easy to follow as well, but due Homebrew, the files have to be copied to different folders. I also noticed that the URL to clone the repository from is not correct in the README file.</p>
+
+<p><strong>Get GeoCouch</strong></p>
+
+<pre><code>git clone https://github.com/couchbase/geocouch.git
+cd geocouch
+git checkout couchdb1.1.x # choose the correct branch for your version
+</code></pre>
+
+<p><strong>Get CouchDB source</strong></p>
+
+<p>from <a href="http://couchdb.apache.org/downloads.html">apache CouchDB</a> and set <code>COUCH_SRC</code> to the directory containing the source, e.g.:</p>
+
+<pre><code>export COUCH_SRC=/path/to/source/src/couchdb
+</code></pre>
+
+<p><strong>Installation</strong></p>
+
+<p>Run <code>make</code> in the directory</p>
+
+<pre><code>make
+</code></pre>
+
+<p>Copy the configuration file for GeoCouch from <code>etc/couchdb/local.d/</code> to <code>/usr/local/etc/couchdb/local.d/</code></p>
+
+<pre><code>cp etc/couchdb/local.d/geocouch.ini /usr/local/etc/couchdb/local.d/
+</code></pre>
+
+<p><strong>Futon tests</strong></p>
+
+<p>To make sure your installation is working also copy the Futon tests over (from <code>share/www/script/test</code> to <code>/usr/local/share/couchdb/www/script/test</code>):</p>
+
+<pre><code>cp share/www/script/test/* /usr/local/share/couchdb/www/script/test/
+</code></pre>
+
+<p>Add the tests to <code>/usr/local/share/couchdb/www/script/couch_tests.js</code></p>
+
+<pre><code>loadTest("spatial.js");
+loadTest("list_spatial.js");
+loadTest("etags_spatial.js");
+loadTest("multiple_spatial_rows.js");
+loadTest("spatial_compaction.js");
+loadTest("spatial_design_docs.js");
+loadTest("spatial_bugfixes.js");
+</code></pre>
+
+<p><strong>Follow the remaining instructions in the official README file.</strong></p>
+
+    
+
+</div>
+
+		      <div id="footer">
+        &copy; 2011 by Felix Kling <br />
+        This web site uses the Open Source web analytics 
+        software <a href="http://piwik.org/">Piwik</a>. 
+        You can <a href="/piwik_opt_out.html"><strong>opt out</strong></a> from this.
+        </div>
+		</div>
+
+	</div>
+	<!-- Piwik --> 
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.reblaus-kleinkunst.de/" : "http://piwik.reblaus-kleinkunst.de/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 2);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://piwik.reblaus-kleinkunst.de/piwik.php?idsite=2" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+</body>
+</html>
