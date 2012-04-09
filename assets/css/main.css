@@ -317,6 +317,11 @@ blockquote {
     font-size: 1.3em;
 }
 
+#post.image img {
+    display: block;
+    margin: auto;
+}
+
 #footer {
     text-align: center;
     font-size: 0.8em;
