@@ -3,7 +3,9 @@
 {% for project in projects %}
 <div class="project">
     <div class="picture">
-        <img width="180" src="{{ project.image }}" />
+        {%if project.image %}
+        <img width="180" class="image" src="{{ project.image }}" />
+        {% endif %}
     </div>
     <div class="description">
     <h3>{{ project.title }}</h3>

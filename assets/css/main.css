@@ -343,7 +343,7 @@ blockquote {
     margin-right: 10px;
 }
 
-#projects img {
+#projects .picture .image {
     border: 2px solid #555;
     box-shadow: 2px 2px 5px #888;
 }
