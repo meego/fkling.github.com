@@ -8,4 +8,5 @@ menu:
   main:
     - name: projects
     - name: log
+    - name: javascript
     - name: about

@@ -218,17 +218,10 @@ blockquote {
     display:  inline;
 }
 
-.post-types {
-    white-space: nowrap;
-}
-
 .post-type {
-    float: right;
     width: 16px;
     height: 16px;
     color: transparent;
-    padding-left: 5px;
-    padding-right: 5px;
     background-repeat:  no-repeat !important;
     display: inline-block;
 }
@@ -251,12 +244,20 @@ blockquote {
     background: url(/assets/icons/script_16.png);
 }
 
-#post .footer {
+
+#post .footer .source {
     padding-top: 10px;
     border-top: 2px solid #AAA6A6;
     color: #AAA6A6;
     font-size: 0.8em;
 }
+
+#post #disqus_thread {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 2px solid #AAA6A6;
+}
+
 
 #post .header {
     color: #888;
@@ -320,6 +321,14 @@ blockquote {
 #post.image img {
     display: block;
     margin: auto;
+}
+
+#post p > code {
+    border-radius: 3px;
+    border: 1px solid #AAA;
+    padding-left: 2px;
+    padding-right: 2px;
+    background-color: #DDD;
 }
 
 #footer {
