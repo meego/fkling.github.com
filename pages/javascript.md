@@ -5,7 +5,7 @@ menu: [javascript]
 
 *This is my attempt of creating a quite comprehensive summary and reference for JavaScript and related technologies. It is not a finished guide, it will grow over time. Please feel free to add comments and let me know how this guide could be improved.*
 
-The [Mozilla Developer Network] (https://developer.mozilla.org/) (MDN) is a community driven web site containing a lot of various useful information regarding web development.  
+The [Mozilla Developer Network](https://developer.mozilla.org/) (MDN) is a community driven web site containing a lot of various useful information regarding web development.  
 It is important to distinguish between JavaScript, the **language** as such, and the **environment** it is executed, which is the **browser** in most cases. Some technologies heavily used together with JavaScript in the browser are actually not part of JavaScript, but of the it's HTML and DOM implementation.
 
 ---
