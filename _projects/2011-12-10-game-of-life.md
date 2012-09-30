@@ -4,6 +4,7 @@ title: "Conway's Game of Life"
 image: /images/projects/game_of_life.png
 link: http://felix-kling.de/Game-of-Life
 source: https://github.com/fkling/Game-of-Life
+github: Game-of-Life
 categories:
     - JavaScript
     - HTML5

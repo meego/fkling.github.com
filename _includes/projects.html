@@ -2,9 +2,15 @@
 <div id="projects">
 {% for project in projects %}
 <div class="project">
-    <div class="picture">
+    <div class="side">
         {%if project.image %}
         <img width="180" class="image" src="{{ project.image }}" />
+        {% endif %}
+        {%if project.github %}
+        <iframe src="http://ghbtns.com/github-btn.html?user=fkling&repo={{ project.github }}&type=watch&count=true"
+          allowtransparency="true" frameborder="0" scrolling="0" width="90px" height="20px"> </iframe>
+        <iframe src="http://ghbtns.com/github-btn.html?user=fkling&repo={{ project.github }}&type=fork&count=true"
+          allowtransparency="true" frameborder="0" scrolling="0" width="90px" height="20px"> </iframe>
         {% endif %}
     </div>
     <div class="description">

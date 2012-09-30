@@ -4,6 +4,7 @@ title: "FloatNotes"
 image: http://www.floatnotes.org/_/rsrc/1294161006133/home/110104-0007.png?height=120&width=180
 link: http://floatnotes.org
 source: https://github.com/fkling/floatnotes
+github: floatnotes
 categories:
     - JavaScript
     - XUL

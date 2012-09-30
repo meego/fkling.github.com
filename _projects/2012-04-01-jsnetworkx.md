@@ -3,6 +3,7 @@ layout: project
 title: JSNetworkX
 link: http://felix-kling.de/JSNetworkX
 source: https://github.com/fkling/JSNetworkX
+github: JSNetworkX
 categories:
     - JavaScript
     - HTML5
@@ -22,8 +23,8 @@ is available.
 <script src="/assets/js/d3.v2.min.js"> </script>
 <script src="/assets/js/jsnetworkx.js"> </script>
 <script id="jsnx_anchor">
-    var d = $('<div />').appendTo(
-        $("#jsnx_anchor").closest('.project').find('.picture')
+    var d = $('<div />').prependTo(
+        $("#jsnx_anchor").closest('.project').find('.side')
     ).addClass('image').height(180).width(180).attr('id', 'chart');
 
 (function() {
