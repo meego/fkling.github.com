@@ -2,33 +2,33 @@
 <html>
 <head>
 <title> How to return data from an Ajax call? - Felix
-	Kling</title>
+  Kling</title>
 <link href="/assets/css/main.css" rel="stylesheet" type="text/css" />
 <link href="/assets/css/sunburst.css" rel="stylesheet" type="text/css" />
 <script src="/assets/js/prettify.js"></script>
 <script>
-	window.onload = function() {
-		var a = false;
-		var codes = document.getElementsByTagName('code');
-		for ( var i = codes.length; i--;) {
-			codes[i].parentNode.classList.add('prettyprint');
-			a = true;
-		}
-		if (a) {
-			prettyPrint()
-		}
-	}
+  window.onload = function() {
+    var a = false;
+    var codes = document.getElementsByTagName('code');
+    for ( var i = codes.length; i--;) {
+      codes[i].parentNode.classList.add('prettyprint');
+      a = true;
+    }
+    if (a) {
+      prettyPrint()
+    }
+  }
 </script>
 </head>
 <body>
-	<div id="main">
-		<header id="header">
-			<h1>{
-				 <a href="/"
-					title="return to home">Felix Kling</a>
-			}</h1>
-				
-				<ul class="menu">
+  <div id="main">
+    <header id="header">
+      <h1>{
+         <a href="/"
+          title="return to home">Felix Kling</a>
+      }</h1>
+        
+        <ul class="menu">
     
         <li class="entry">
         <a  href="/pages/projects.html">projects</a>
@@ -48,9 +48,9 @@
     
 </ul>
 
-		</header>
-		<div id="content">
-		<div id="post" class="text">
+    </header>
+    <div id="content">
+    <div id="post" class="text">
     <div class="header">
         <h2>How to return data from an Ajax call?</h2>
         <div class="meta">
@@ -63,7 +63,7 @@
     </div>
     <p>That is another question that is frequently asked on <a href="http://stackoverflow.com/questions/5316697/jquery-return-data-after-ajax-call-success">stackoverflow.com</a>.</p>
 
-<p><strong>The short answer:</strong> You can&rsquo;t (if you don&rsquo;t want to give the benefits of Ajax a miss).</p>
+<p><strong>The short answer:</strong> You can&#8217;t (if you don&#8217;t want to give the benefits of Ajax a miss).</p>
 
 <h3 id="ajax">Ajax</h3>
 
@@ -78,7 +78,7 @@ when it is available.</p>
 <h3 id="callbacks">Callbacks?</h3>
 
 <p>One could say the philosophy about <a href="http://en.wikipedia.org/wiki/Callbacks">callbacks</a> is: 
-<em>Don&rsquo;t call us, we call you</em>. You are not waiting for a function to return a value, but you provide 
+<em>Don&#8217;t call us, we call you</em>. You are not waiting for a function to return a value, but you provide 
 another function that gets called as soon as this value is available.</p>
 
 <p>So instead of doing</p>
@@ -102,10 +102,10 @@ callback.</p>
 
 <h3 id="getting-ajax-into-the-game">Getting Ajax into the game</h3>
 
-<p>Here is a telephone analogy: Imagine you are calling one of your colleagues (friends, fellow students, &hellip;) 
-and ask him to do a job for you that takes some time (let&rsquo;s say picking something up from somewhere). Now 
+<p>Here is a telephone analogy: Imagine you are calling one of your colleagues (friends, fellow students, &#8230;) 
+and ask him to do a job for you that takes some time (let&#8217;s say picking something up from somewhere). Now 
 what would you do? Would you <em>wait on the phone</em> until the other person returns (e.g. waiting for an hour)? 
-Or would you rather say: &ldquo;Ey, know what? <em>Call me back</em> when you have my stuff. (Here is my number:&hellip;)&rdquo;?</p>
+Or would you rather say: &#8220;Ey, know what? <em>Call me back</em> when you have my stuff. (Here is my number:&#8230;)&#8221;?</p>
 
 <p>Some people seem to think that JavaScript is waiting for the call to finish (waiting on the phone) 
 and wonder why code like</p>
@@ -122,7 +122,7 @@ var val = foo();
 // do some processing with val here
 </code></pre>
 
-<p>does <strong>not</strong> work (I&rsquo;m using <a href="http://jquery.com">jQuery</a> in this example, <code>$.get()</code> just makes an 
+<p>does <strong>not</strong> work (I&#8217;m using <a href="http://jquery.com">jQuery</a> in this example, <code>$.get()</code> just makes an 
 GET Ajax request to <code>&lt;some url&gt;</code> and executes the callback passed as second parameter).</p>
 
 <p>It is because JavaScript <strong>does not wait</strong> until the Ajax request is finished. When the function is 
@@ -171,26 +171,32 @@ nothing but annoyed users.</p>
 
 </div>
 
-		      <div id="footer">
+          <div id="footer">
         &copy; 2011-2012 by Felix Kling <br />
         This web site uses the Open Source web analytics 
         software <a href="http://piwik.org/">Piwik</a>. 
         You can <a href="/piwik_opt_out.html"><strong>opt out</strong></a> from this.
         </div>
-		</div>
+    </div>
 
-	</div>
-	<!-- Piwik --> 
-<script type="text/javascript">
-var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.reblaus-kleinkunst.de/" : "http://piwik.reblaus-kleinkunst.de/");
-document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
-</script><script type="text/javascript">
-try {
-var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 2);
-piwikTracker.trackPageView();
-piwikTracker.enableLinkTracking();
-} catch( err ) {}
-</script><noscript><p><img src="http://piwik.reblaus-kleinkunst.de/piwik.php?idsite=2" style="border:0" alt="" /></p></noscript>
-<!-- End Piwik Tracking Code -->
+  </div>
+  <!-- Piwik -->
+  <script type="text/javascript">
+    var _paq = _paq || [];
+    _paq.push(["trackPageView"]);
+    _paq.push(["enableLinkTracking"]);
+
+    (function() {
+     var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik.reblaus-kleinkunst.de/";
+     _paq.push(["setTrackerUrl", u+"piwik.php"]);
+     _paq.push(["setSiteId", "2"]);
+     var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+     g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+     })();
+</script>
+<!-- Piwik Image Tracker -->
+<img src="http://piwik.reblaus-kleinkunst.de/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" />
+<!-- End Piwik -->
+<!-- End Piwik Code -->
 </body>
 </html>

@@ -2,33 +2,33 @@
 <html>
 <head>
 <title> Fixing jQuery's Opacity in Firefox Extensions - Felix
-	Kling</title>
+  Kling</title>
 <link href="/assets/css/main.css" rel="stylesheet" type="text/css" />
 <link href="/assets/css/sunburst.css" rel="stylesheet" type="text/css" />
 <script src="/assets/js/prettify.js"></script>
 <script>
-	window.onload = function() {
-		var a = false;
-		var codes = document.getElementsByTagName('code');
-		for ( var i = codes.length; i--;) {
-			codes[i].parentNode.classList.add('prettyprint');
-			a = true;
-		}
-		if (a) {
-			prettyPrint()
-		}
-	}
+  window.onload = function() {
+    var a = false;
+    var codes = document.getElementsByTagName('code');
+    for ( var i = codes.length; i--;) {
+      codes[i].parentNode.classList.add('prettyprint');
+      a = true;
+    }
+    if (a) {
+      prettyPrint()
+    }
+  }
 </script>
 </head>
 <body>
-	<div id="main">
-		<header id="header">
-			<h1>{
-				 <a href="/"
-					title="return to home">Felix Kling</a>
-			}</h1>
-				
-				<ul class="menu">
+  <div id="main">
+    <header id="header">
+      <h1>{
+         <a href="/"
+          title="return to home">Felix Kling</a>
+      }</h1>
+        
+        <ul class="menu">
     
         <li class="entry">
         <a  href="/pages/projects.html">projects</a>
@@ -48,9 +48,9 @@
     
 </ul>
 
-		</header>
-		<div id="content">
-		<div id="post" class="text script">
+    </header>
+    <div id="content">
+    <div id="post" class="text script">
     <div class="header">
         <h2>Fixing jQuery's Opacity in Firefox Extensions</h2>
         <div class="meta">
@@ -71,7 +71,7 @@ Stack Overflow answer</a> seems to provide a working solution.</p>
 <p>There is some <a href="http://stackoverflow.com/questions/491490/how-to-use-jquery-in-firefox-extension">information</a> , <a href="http://forum.jquery.com/topic/jquery-1-4-2-inside-a-firefox-extension">more</a> or <a href="http://gluei.com/blog/view/using-jquery-inside-your-firefox-extension">less</a> elaborated,  about how to integrate <a href="http://jquery.com">jQuery</a> in your own Firefox extension.</p>
 
 <p>I managed to get it working too, but I recognized one problem: I was not able to set the opacity of an element via <code>$(el).css('opacity', 0.5)</code> nor did the effects like <code>.fadeIn()</code> or <code>.fadeOut()</code> work.<br />
-It took some time for me to figure it out (couldn&rsquo;t  find anything on the web about it):</p>
+It took some time for me to figure it out (couldn&#8217;t  find anything on the web about it):</p>
 
 <p>When jQuery loads, it checks, which features are supported by the browser. It seems that the check for opacity fails due the fact, that jQuery runs in another context.  <br />
 If it is loaded via an overlay for the browser</p>
@@ -124,26 +124,32 @@ If it is loaded via an overlay for the browser</p>
 
 </div>
 
-		      <div id="footer">
+          <div id="footer">
         &copy; 2011-2012 by Felix Kling <br />
         This web site uses the Open Source web analytics 
         software <a href="http://piwik.org/">Piwik</a>. 
         You can <a href="/piwik_opt_out.html"><strong>opt out</strong></a> from this.
         </div>
-		</div>
+    </div>
 
-	</div>
-	<!-- Piwik --> 
-<script type="text/javascript">
-var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.reblaus-kleinkunst.de/" : "http://piwik.reblaus-kleinkunst.de/");
-document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
-</script><script type="text/javascript">
-try {
-var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 2);
-piwikTracker.trackPageView();
-piwikTracker.enableLinkTracking();
-} catch( err ) {}
-</script><noscript><p><img src="http://piwik.reblaus-kleinkunst.de/piwik.php?idsite=2" style="border:0" alt="" /></p></noscript>
-<!-- End Piwik Tracking Code -->
+  </div>
+  <!-- Piwik -->
+  <script type="text/javascript">
+    var _paq = _paq || [];
+    _paq.push(["trackPageView"]);
+    _paq.push(["enableLinkTracking"]);
+
+    (function() {
+     var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik.reblaus-kleinkunst.de/";
+     _paq.push(["setTrackerUrl", u+"piwik.php"]);
+     _paq.push(["setSiteId", "2"]);
+     var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+     g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+     })();
+</script>
+<!-- Piwik Image Tracker -->
+<img src="http://piwik.reblaus-kleinkunst.de/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" />
+<!-- End Piwik -->
+<!-- End Piwik Code -->
 </body>
 </html>

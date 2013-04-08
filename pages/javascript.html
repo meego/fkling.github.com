@@ -2,33 +2,33 @@
 <html>
 <head>
 <title>Felix
-	Kling</title>
+  Kling</title>
 <link href="/assets/css/main.css" rel="stylesheet" type="text/css" />
 <link href="/assets/css/sunburst.css" rel="stylesheet" type="text/css" />
 <script src="/assets/js/prettify.js"></script>
 <script>
-	window.onload = function() {
-		var a = false;
-		var codes = document.getElementsByTagName('code');
-		for ( var i = codes.length; i--;) {
-			codes[i].parentNode.classList.add('prettyprint');
-			a = true;
-		}
-		if (a) {
-			prettyPrint()
-		}
-	}
+  window.onload = function() {
+    var a = false;
+    var codes = document.getElementsByTagName('code');
+    for ( var i = codes.length; i--;) {
+      codes[i].parentNode.classList.add('prettyprint');
+      a = true;
+    }
+    if (a) {
+      prettyPrint()
+    }
+  }
 </script>
 </head>
 <body>
-	<div id="main">
-		<header id="header">
-			<h1>{
-				 <a href="/"
-					title="return to home">Felix Kling</a>
-			}</h1>
-				
-				<ul class="menu">
+  <div id="main">
+    <header id="header">
+      <h1>{
+         <a href="/"
+          title="return to home">Felix Kling</a>
+      }</h1>
+        
+        <ul class="menu">
     
         <li class="entry">
         <a  href="/pages/projects.html">projects</a>
@@ -48,18 +48,18 @@
     
 </ul>
 
-		</header>
-		<div id="content">
-		<p><em>This is my attempt of creating a quite comprehensive summary and reference for JavaScript and related technologies. It is not a finished guide, it will grow over time. Please feel free to add comments and let me know how this guide could be improved.</em></p>
+    </header>
+    <div id="content">
+    <p><em>This is my attempt of creating a quite comprehensive summary and reference for JavaScript and related technologies. It is not a finished guide, it will grow over time. Please feel free to add comments and let me know how this guide could be improved.</em></p>
 
 <p>The <a href="https://developer.mozilla.org/">Mozilla Developer Network</a> (MDN) is a community driven web site containing a lot of various useful information regarding web development.<br />
-It is important to distinguish between JavaScript, the <strong>language</strong> as such, and the <strong>environment</strong> it is executed, which is the <strong>browser</strong> in most cases. Some technologies heavily used together with JavaScript in the browser are actually not part of JavaScript, but of the it&rsquo;s HTML and DOM implementation.</p>
+It is important to distinguish between JavaScript, the <strong>language</strong> as such, and the <strong>environment</strong> it is executed, which is the <strong>browser</strong> in most cases. Some technologies heavily used together with JavaScript in the browser are actually not part of JavaScript, but of the it&#8217;s HTML and DOM implementation.</p>
 
 <hr />
 
 <h3 id="javascript-the-language">JavaScript, the language</h3>
 
-<p>The <a href="https://developer.mozilla.org/en/JavaScript/Guide">MDN JavaScript Guide</a> provides a very detailed introduction to JavaScript and is definitely a &ldquo;must read&rdquo;. A few concepts are very essential in order to understand JavaScript and be able to use it to its full potential:</p>
+<p>The <a href="https://developer.mozilla.org/en/JavaScript/Guide">MDN JavaScript Guide</a> provides a very detailed introduction to JavaScript and is definitely a &#8220;must read&#8221;. A few concepts are very essential in order to understand JavaScript and be able to use it to its full potential:</p>
 
 <ul>
   <li>
@@ -75,7 +75,7 @@ It is important to distinguish between JavaScript, the <strong>language</strong>
     <p><strong><code>this</code></strong> is a special variable available in all functions. The value of <code>this</code> is not specified during definition time, but during runtime. How its value is determined is thoroughly decribed in the <a href="https://developer.mozilla.org/en/JavaScript/Reference/Operators/this">MDN documentation</a>.</p>
   </li>
   <li>
-    <p>JavaScript does not follow a classical inheritance paradigm, but a <a href="http://en.wikipedia.org/wiki/Prototype-based_programming">prototype based</a> one. It therefore does not provide classes, but so called <em>constructor functions</em>, which can be seen as object generators. <a href="https://developer.mozilla.org/en/Introduction_to_Object-Oriented_JavaScript">&ldquo;Introduction to Object-Oriented JavaScript&rdquo;</a> provides more information about OOP in JavaScript.</p>
+    <p>JavaScript does not follow a classical inheritance paradigm, but a <a href="http://en.wikipedia.org/wiki/Prototype-based_programming">prototype based</a> one. It therefore does not provide classes, but so called <em>constructor functions</em>, which can be seen as object generators. <a href="https://developer.mozilla.org/en/Introduction_to_Object-Oriented_JavaScript">&#8220;Introduction to Object-Oriented JavaScript&#8221;</a> provides more information about OOP in JavaScript.</p>
   </li>
 </ul>
 
@@ -153,26 +153,32 @@ Still, to get most out of these libraries, you should understand the DOM.</p>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <p><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></p>
 
-		      <div id="footer">
+          <div id="footer">
         &copy; 2011-2012 by Felix Kling <br />
         This web site uses the Open Source web analytics 
         software <a href="http://piwik.org/">Piwik</a>. 
         You can <a href="/piwik_opt_out.html"><strong>opt out</strong></a> from this.
         </div>
-		</div>
+    </div>
 
-	</div>
-	<!-- Piwik --> 
-<script type="text/javascript">
-var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.reblaus-kleinkunst.de/" : "http://piwik.reblaus-kleinkunst.de/");
-document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
-</script><script type="text/javascript">
-try {
-var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 2);
-piwikTracker.trackPageView();
-piwikTracker.enableLinkTracking();
-} catch( err ) {}
-</script><noscript><p><img src="http://piwik.reblaus-kleinkunst.de/piwik.php?idsite=2" style="border:0" alt="" /></p></noscript>
-<!-- End Piwik Tracking Code -->
+  </div>
+  <!-- Piwik -->
+  <script type="text/javascript">
+    var _paq = _paq || [];
+    _paq.push(["trackPageView"]);
+    _paq.push(["enableLinkTracking"]);
+
+    (function() {
+     var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik.reblaus-kleinkunst.de/";
+     _paq.push(["setTrackerUrl", u+"piwik.php"]);
+     _paq.push(["setSiteId", "2"]);
+     var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+     g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+     })();
+</script>
+<!-- Piwik Image Tracker -->
+<img src="http://piwik.reblaus-kleinkunst.de/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" />
+<!-- End Piwik -->
+<!-- End Piwik Code -->
 </body>
 </html>

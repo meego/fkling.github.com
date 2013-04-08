@@ -2,33 +2,33 @@
 <html>
 <head>
 <title> Getset objects in collections - Felix
-	Kling</title>
+  Kling</title>
 <link href="/assets/css/main.css" rel="stylesheet" type="text/css" />
 <link href="/assets/css/sunburst.css" rel="stylesheet" type="text/css" />
 <script src="/assets/js/prettify.js"></script>
 <script>
-	window.onload = function() {
-		var a = false;
-		var codes = document.getElementsByTagName('code');
-		for ( var i = codes.length; i--;) {
-			codes[i].parentNode.classList.add('prettyprint');
-			a = true;
-		}
-		if (a) {
-			prettyPrint()
-		}
-	}
+  window.onload = function() {
+    var a = false;
+    var codes = document.getElementsByTagName('code');
+    for ( var i = codes.length; i--;) {
+      codes[i].parentNode.classList.add('prettyprint');
+      a = true;
+    }
+    if (a) {
+      prettyPrint()
+    }
+  }
 </script>
 </head>
 <body>
-	<div id="main">
-		<header id="header">
-			<h1>{
-				 <a href="/"
-					title="return to home">Felix Kling</a>
-			}</h1>
-				
-				<ul class="menu">
+  <div id="main">
+    <header id="header">
+      <h1>{
+         <a href="/"
+          title="return to home">Felix Kling</a>
+      }</h1>
+        
+        <ul class="menu">
     
         <li class="entry">
         <a  href="/pages/projects.html">projects</a>
@@ -48,9 +48,9 @@
     
 </ul>
 
-		</header>
-		<div id="content">
-		<div id="post" class="text script">
+    </header>
+    <div id="content">
+    <div id="post" class="text script">
     <div class="header">
         <h2>Getset objects in collections</h2>
         <div class="meta">
@@ -62,7 +62,7 @@
         </div>
     </div>
     <p>Quite often you find yourself in a situation where you have to an object to a collection
-or change a certain property. The &ldquo;normal&rdquo; is to test via an <code>if</code> statement whether the
+or change a certain property. The &#8220;normal&#8221; is to test via an <code>if</code> statement whether the
 object exists or not:</p>
 
 <pre><code>var obj = collection[someId];
@@ -81,7 +81,7 @@ well know:</p>
 <pre><code>param = param || 'default';
 </code></pre>
 
-<p>Can we use this somehow in this situation too? Yes we can. &ldquo;Luckily&rdquo;, the assignment operation
+<p>Can we use this somehow in this situation too? Yes we can. &#8220;Luckily&#8221;, the assignment operation
 <em>returns</em> the value that was assigned to a variable:</p>
 
 <blockquote>
@@ -100,7 +100,7 @@ well know:</p>
         <li>Type(<em>lref</em>) is Reference is <strong>true</strong></li>
         <li>IsStrictReference(<em>lref</em>) is <strong>true</strong></li>
         <li>Type(GetBase(<em>lref</em>)) is Enviroment Record</li>
-        <li>GetReferencedName(<em>lref</em>) is either &ldquo;<strong><code>eval</code></strong>&rdquo; or &ldquo;<strong><code>arguments</code></strong>&rdquo;</li>
+        <li>GetReferencedName(<em>lref</em>) is either &#8220;<strong><code>eval</code></strong>&#8221; or &#8220;<strong><code>arguments</code></strong>&#8221;</li>
       </ul>
     </li>
     <li>Call PutValue(<em>lref</em>, <em>rval</em>).
@@ -135,26 +135,32 @@ well know:</p>
 
 </div>
 
-		      <div id="footer">
+          <div id="footer">
         &copy; 2011-2012 by Felix Kling <br />
         This web site uses the Open Source web analytics 
         software <a href="http://piwik.org/">Piwik</a>. 
         You can <a href="/piwik_opt_out.html"><strong>opt out</strong></a> from this.
         </div>
-		</div>
+    </div>
 
-	</div>
-	<!-- Piwik --> 
-<script type="text/javascript">
-var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.reblaus-kleinkunst.de/" : "http://piwik.reblaus-kleinkunst.de/");
-document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
-</script><script type="text/javascript">
-try {
-var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 2);
-piwikTracker.trackPageView();
-piwikTracker.enableLinkTracking();
-} catch( err ) {}
-</script><noscript><p><img src="http://piwik.reblaus-kleinkunst.de/piwik.php?idsite=2" style="border:0" alt="" /></p></noscript>
-<!-- End Piwik Tracking Code -->
+  </div>
+  <!-- Piwik -->
+  <script type="text/javascript">
+    var _paq = _paq || [];
+    _paq.push(["trackPageView"]);
+    _paq.push(["enableLinkTracking"]);
+
+    (function() {
+     var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik.reblaus-kleinkunst.de/";
+     _paq.push(["setTrackerUrl", u+"piwik.php"]);
+     _paq.push(["setSiteId", "2"]);
+     var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+     g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+     })();
+</script>
+<!-- Piwik Image Tracker -->
+<img src="http://piwik.reblaus-kleinkunst.de/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" />
+<!-- End Piwik -->
+<!-- End Piwik Code -->
 </body>
 </html>
